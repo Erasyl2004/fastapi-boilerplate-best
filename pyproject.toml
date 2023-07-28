@@ -15,6 +15,16 @@ uvicorn= {extras = ["standard"], version = "^0.20.0"}
 python-multipart = "^0.0.6"
 pymongo = {extras = ["srv"], version = "^4.3.3"}
 orjson = "^3.9.1"
+requests = "^2.31.0"
+openai = "^0.27.8"
+rev-ai = "^2.17.1"
+langchain = "^0.0.229"
+embeddings = "^0.0.8"
+faiss-cpu = "^1.7.4"
+pandas = "^2.0.3"
+agent = "^0.1.2"
+boto3 = "^1.28.2"
+tiktoken = "^0.4.0"
 
 
 [tool.poetry.group.dev.dependencies]

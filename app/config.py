@@ -1,7 +1,7 @@
 from typing import Any
 
-from pydantic import BaseSettings
 from pymongo import MongoClient
+from pydantic import BaseSettings
 
 
 class Config(BaseSettings):

@@ -3,7 +3,6 @@ import pkgutil
 from datetime import datetime
 from typing import Any, Callable, Optional
 from zoneinfo import ZoneInfo
-
 import orjson
 from bson.objectid import ObjectId
 from pydantic import BaseModel, root_validator
