@@ -1,3 +1,0 @@
-openai_api_key = "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"
-rev_ai_api_key = "024zlki9_y67jgVQ_se3JMNl37oNTMTymNzOx60baJYs7LkVkai5jpeqj5OQ65lBkMEy4i_ODwCzs8Y_hmdoTdQOEPKP0"
-serp_api_key = "de89e83179a8070ec5935fc0f0eec16bd6adeb2d79178bdfbaf87c21c21017fd"
