@@ -9,9 +9,11 @@ from langchain.agents import AgentType
 from app.audio.adapters import gpt_api
 from app.audio.source import inform_about_kaspi
 from app.audio.source import prompt
-import env
 import os
-llm = OpenAI(temperature=0, openai_api_key=env.openai_api_key)
+from dotenv import load_dotenv
+load_dotenv()
+
+llm = OpenAI(temperature=0, openai_api_key=os.getenv("openai_api_key"))
 
 def update_vector_store():
     df = pd.DataFrame(inform_about_kaspi.documents)
@@ -20,7 +22,7 @@ def update_vector_store():
     documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(documents)
-    embeddings = OpenAIEmbeddings(openai_api_key=env.openai_api_key)
+    embeddings = OpenAIEmbeddings(openai_api_key="")
     db = FAISS.from_documents(texts, embeddings)
     db.as_retriever()
     db.save_local('./vectordb')
@@ -34,7 +36,7 @@ def get_technical_analysis(speech: str):
     question = eval(question)
     print(question)
 
-    embeddings = OpenAIEmbeddings(openai_api_key=env.openai_api_key)
+    embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("openai_api_key"))
     db = FAISS.load_local('./vectordb',embeddings)
     tools = [
         Tool(
