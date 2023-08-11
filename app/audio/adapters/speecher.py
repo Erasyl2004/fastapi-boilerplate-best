@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def generate_text(source_url: str):
-        custom_vocabularies = [CustomVocabulary(["Kaspi Bank", "Kaspi Red"])]
+        custom_vocabularies = [CustomVocabulary(["Kaspi", "Kaspi Bank", "Kaspi Bonus", "Kaspi Kartomat", "Kaspi Gold", "Kaspi Deposit"])]
         client = apiclient.RevAiAPIClient(os.getenv("rev_ai_api_key"))
         url_job = client.submit_job_url(source_config=CustomerUrlData(url=source_url), language="en", custom_vocabularies=custom_vocabularies)
         return url_job.id

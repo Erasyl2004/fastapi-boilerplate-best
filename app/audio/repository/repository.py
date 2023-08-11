@@ -22,3 +22,12 @@ class AudioRepository:
             }
         )
         return str(speech["speech"])
+    def update_speech(self,user_id: str, speech: str):
+        self.database["speech_to_text"].update_one(
+            {"_id": ObjectId(user_id)},
+            {
+               "$set":{
+                   "speech": speech,
+               } 
+            },
+        )

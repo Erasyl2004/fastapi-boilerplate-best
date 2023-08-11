@@ -1,6 +1,6 @@
 prompt_evaluate="""
 I will give you a conversation between the manager and the customer in text format. Evaluate the work of the manager by clearly analyzing the text give an answer by writing about mistakes, correct decisions. Before writing about a mistake, first make sure that it is in the text.
-here are the rules for how a manager should behave:  
+Here are the rules for how a manager should behave. Check all these rules:  
 greet the client and introduce himself,
 show friendliness and respect,
 contact the customer by name and if the manager addressed the customer at least once by name then this rule is considered fulfilled,
@@ -18,7 +18,8 @@ Note that you should know:
 before the start of the conversation, the manager does not know the name of the customer.
 Your response should be in json format like this:
 {
-    "opinion": "(your general opinion)",
+    "opinion": "(your general opinion,give a detailed answer)",
+    "grade":"(rating to the manager from 0 to 100 for example: 68)",
     "corrections": [
       {
         "mistake": "(first mistake)",

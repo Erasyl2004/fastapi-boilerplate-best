@@ -16,7 +16,5 @@ def speech_to_text(
     url = svc.s3_service.upload_file(file.file,file.filename)
     id = speecher.generate_text(url)
     text = parser.parse(speecher.get_text(id))
-    mark = parser.mark_the_speech(text)
-    text = "roles:\n" + mark + "\ntext:\n"+ text
     id = svc.repository.create_speech(text)
     return id
